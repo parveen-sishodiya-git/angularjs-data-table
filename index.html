@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html ng-app="plunker">
+
+<head>
+  <meta charset="utf-8" />
+  <title>AngularJS Plunker</title>
+  <script>
+    document.write('<base href="' + document.location + '" />');
+  </script>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular.js"></script> 
+  
+  
+  <link rel="stylesheet" href="ng-table.css">
+  <script src="ng-table.js"></script>
+
+  <script src="app.js"></script>
+</head>
+
+<body ng-controller="MainCtrl">
+
+<h3>First Table</h3>
+  <table ng-table="tableParamsmydata" class="table" show-filter="true">
+    <tr ng-repeat="user in $data">
+      <td title="'Name'" filter="{ name: 'text'}" sortable="'name'">
+        {{user.name}}</td>
+      <td title="'Age'" filter="{ age: 'number'}" sortable="'age'">
+        {{user.age}}</td>
+    </tr>
+  </table>
+
+  <hr>
+  *********************************************************************************************************************************************************************************************************************************************************************************
+
+
+  <h3>Second Table</h3>
+  <table ng-table="tableParamsyourdata" class="table" show-filter="true">
+    <tr ng-repeat="user in $data">
+      <td title="'Name'" filter="{ name: 'text'}" sortable="'name'">
+        {{user.name}}</td>
+      <td title="'Age'" filter="{ age: 'number'}" sortable="'age'">
+        {{user.age}}</td>
+    </tr>
+  </table>
+
+
+<!--
+  <p><strong> =================================================================================</strong></p>
+
+        <p><strong>Page:</strong> {{tableParams.page()}}</p>
+        <p><strong>Count per page:</strong> {{tableParams.count()}}</p>
+  <table ng-table="tableParams" class="table table-condensed table-bordered table-striped">
+    <tr ng-repeat="row in $data">
+      <td data-title="'Name'">{{row.name}}</td>
+      <td data-title="'Age'">{{row.age}}</td>
+    </tr>
+  </table>-->
+
+
+
+</body>
+
+</html>
